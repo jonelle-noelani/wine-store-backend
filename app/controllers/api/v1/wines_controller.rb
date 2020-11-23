@@ -1,4 +1,4 @@
-class WinesController < ApplicationController
+class Api::V1::WinesController < ApplicationController
     def index
         # wines = Wine.all
         # render json: WineSeralizer.new(wines).to_json 
