@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_11_20_033456) do
     t.string "name"
     t.string "dob"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.string "line"
     t.string "city"
     t.string "state"
