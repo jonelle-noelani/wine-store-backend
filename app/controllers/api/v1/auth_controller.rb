@@ -1,10 +1,10 @@
 class Api::V1::AuthController < ApplicationController
-    skip_before_action :authorized, only [:create]
+    skip_before_action :authorized, only: [:create]
 
     def create
-        debugger
-        user = User.find_by(email: user_login_params[:email])
-        if user && user.authenticate(user_login_params[:password])
+        user = User.find_by(email: params[:user][:email])
+        
+        if user && user.authenticate(params[:user][:password])
             token = encode({user_id: user.id})
             render json: { user: UserSerializer.new(user), jwt: token }, status: :accepted
             
@@ -14,7 +14,7 @@ class Api::V1::AuthController < ApplicationController
     end
 
     private
-
+## I guess I'm not using these at the moment??
     def user_login_params
         params.require(:user).permit(:email, :password)
     end
