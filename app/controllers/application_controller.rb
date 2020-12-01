@@ -21,13 +21,13 @@ class ApplicationController < ActionController::API
     end
 
     def current_user
-        byebug
+        # byebug
         if decoded
             user_id = decoded[0]['user_id']
             # user = User.find_by(id: user_id)
             user = User.find(user_id)
         end
-        byebug
+        # byebug
     end
 
     def logged_in?
