@@ -6,10 +6,12 @@ class ApplicationController < ActionController::API
     end
 
     def auth_header
+        # byebug
         request.headers['Authorization']
     end
 
     def decoded
+        # byebug
         if auth_header
             token = auth_header.split(' ')[1]
             begin
@@ -31,10 +33,12 @@ class ApplicationController < ActionController::API
     end
 
     def logged_in?
+        # byebug
         !!current_user
     end
 
     def authorized
+        # byebug
         render json: { message: 'Please Log In'}, status: :unauthorized unless logged_in?
     end
 

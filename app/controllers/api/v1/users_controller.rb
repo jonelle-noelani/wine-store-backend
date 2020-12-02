@@ -19,10 +19,23 @@ class Api::V1::UsersController < ApplicationController
         end
     end
 
+    def update
+        # byebug
+        update_user = User.find(params[:id])
+        if update_user.update(user_update_params)
+            render json: update_user, status: 200
+        else
+            render json: update_user.errors, status: :unprocessable_entity
+        end
+    end
+
     private
     def user_params
-        # params.require(:user).permit(:name, :email, :password, :dob, :line, :city, :state, :postal_code)
         params.require(:user).permit(:email, :password)
-
     end
+
+    def user_update_params
+        params.require(:user).permit(:password, :name, :dob, :line, :city, :state, :postal_code)
+    end
+
 end
