@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
+      post '/charges', to: 'charges#create'
     end
   end
 end
