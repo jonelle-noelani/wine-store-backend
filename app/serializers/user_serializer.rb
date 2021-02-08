@@ -3,5 +3,4 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :reviews
   has_many :wines
-  # has_many :wines, through: :reviews
 end

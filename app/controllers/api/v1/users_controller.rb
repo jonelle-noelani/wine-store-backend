@@ -5,9 +5,6 @@ class Api::V1::UsersController < ApplicationController
         render json: { user: UserSerializer.new(current_user)}, status: :accepted
     end
 
-    # def index
-    #     render json: User.all 
-    # end
 
     def create
         user = User.create(user_params)
@@ -20,7 +17,6 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def update
-        # byebug
         update_user = User.find(params[:id])
         if update_user.update(user_update_params)
             render json: update_user, status: 200
