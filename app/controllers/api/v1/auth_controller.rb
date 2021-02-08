@@ -14,7 +14,7 @@ class Api::V1::AuthController < ApplicationController
     end
 
     private
-## I guess I'm not using these at the moment??
+## I guess I'm not using these at the moment??  yet?
     def user_login_params
         params.require(:user).permit(:email, :password)
     end

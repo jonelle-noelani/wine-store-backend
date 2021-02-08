@@ -42,4 +42,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jwt', '~> 2.2.2'
 gem 'active_model_serializers'
+gem 'stripe'
+gem 'figaro'
 
